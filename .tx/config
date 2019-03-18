@@ -1,0 +1,58 @@
+[main]
+host = https://www.transifex.com
+
+[lightning-rfc-1.00-introductionmd]
+file_filter = cn/00-introduction.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.01-messagingmd]
+file_filter = cn/01-messaging.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.02-peer-protocolmd]
+file_filter = cn/02-peer-protocol.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.03-transactionsmd]
+file_filter = cn/03-transactions.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.04-onion-routingmd]
+file_filter = cn/04-onion-routing.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.05-onchainmd]
+file_filter = cn/05-onchainmd.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.07-routing-gossipmd]
+file_filter = cn/07-routing-gossip.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.08-transportmd]
+file_filter = cn/08-transport.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.09-featuresmd]
+file_filter = cn/09-features.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.10-dns-bootstrapmd]
+file_filter = cn/10-dns-bootstrap.md
+source_lang = en
+type = GITHUBMARKDOWN
+
+[lightning-rfc-1.11-payment-encodingmd]
+file_filter = cn/11-payment-encodingmd.md
+source_lang = en
+type = GITHUBMARKDOWN
+
