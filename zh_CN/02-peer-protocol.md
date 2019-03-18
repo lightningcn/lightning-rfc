@@ -53,18 +53,18 @@
 这将用于构建频道验证证明。
 
 
-        + ------- + + ------- +
-        | |  - （1）--- open_channel -----> | |
-        | | < - （2） -  accept_channel ----- | |
-        | | | |
-        | A |  - （3） -  funding_created ---> | B |
-        | | < - （4） -  funding_signed ----- | |
-        | | | |
-        | |  - （5）--- funding_locked ----> | |
-        | | < - （6）--- funding_locked ----- | |
-        + ------- + + ------- +
+        +-------+                              +-------+
+        |       |--(1)---  open_channel  ----->|       |
+        |       |<-(2)--  accept_channel  -----|       |
+        |       |                              |       |
+        |   A   |--(3)--  funding_created  --->|   B   |
+        |       |<-(4)--  funding_signed  -----|       |
+        |       |                              |       |
+        |       |--(5)--- funding_locked  ---->|       |
+        |       |<-(6)--- funding_locked  -----|       |
+        +-------+                              +-------+
 
-         - 节点A是'资助者'，节点B是'fundee'
+        - where node A is 'funder' and node B is 'fundee'
 
 如果在任何阶段失败，或者一个节点决定通道条款
 由其他节点提供的不适合，频道建立
@@ -416,19 +416,19 @@ IDS。
 1. 一方表示它想要清除频道（因此不会接受新的HTLC）
 2. 一旦所有HTLC都得到解决，最终的通道关闭协商就开始了。
 
-        + ------- + + ------- +
-        | |  - （1）-----关闭-------> | |
-        | | < - （2）-----关机-------- | |
-        | | | |
-        | | <complete all pending HTLCs> | |
-        | A | ...... | B |
-        | | | |
-        | |  - （3） -  closing_signed F1 ---> | |
-        | | < - （4） -  closing_signed F2 ---- | |
-        | | ...... | |
-        | |  - （？） -  closing_signed Fn ---> | |
-        | | < - （？） -  closing_signed Fn ---- | |
-        + ------- + + ------- +
+        +-------+                              +-------+
+        |       |--(1)-----  shutdown  ------->|       |
+        |       |<-(2)-----  shutdown  --------|       |
+        |       |                              |       |
+        |       | <complete all pending HTLCs> |       |
+        |   A   |                 ...          |   B   |
+        |       |                              |       |
+        |       |--(3)-- closing_signed  F1--->|       |
+        |       |<-(4)-- closing_signed  F2----|       |
+        |       |              ...             |       |
+        |       |--(?)-- closing_signed  Fn--->|       |
+        |       |<-(?)-- closing_signed  Fn----|       |
+        +-------+                              +-------+
 
 ### 关闭启动：`shutdown`
 
@@ -570,20 +570,20 @@ HTLC将被添加或接受。一旦任何HTLC被清除，对等体
 批量发送更改：在a之前发送一条或多条`update_`消息
 `commitment_signed`消息，如下图所示：
 
-        + ------- + + ------- +
-        | |  - （1）---- update_add_htlc ----> | |
-        | |  - （2）---- update_add_htlc ----> | |
-        | | < - （3）---- update_add_htlc ----- | |
-        | | | |
-        | |  - （4）--- commitment_signed ---> | |
-        | A | < - （5）---- revoke_and_ack ------ | B |
-        | | | |
-        | | < - （6）--- commitment_signed ---- | |
-        | |  - （7）---- revoke_and_ack -----> | |
-        | | | |
-        | |  - （8）--- commitment_signed ---> | |
-        | | < - （9）---- revoke_and_ack ------ | |
-        + ------- + + ------- +
+        +-------+                               +-------+
+        |       |--(1)---- update_add_htlc ---->|       |
+        |       |--(2)---- update_add_htlc ---->|       |
+        |       |<-(3)---- update_add_htlc -----|       |
+        |       |                               |       |
+        |       |--(4)--- commitment_signed --->|       |
+        |   A   |<-(5)---- revoke_and_ack ------|   B   |
+        |       |                               |       |
+        |       |<-(6)--- commitment_signed ----|       |
+        |       |--(7)---- revoke_and_ack ----->|       |
+        |       |                               |       |
+        |       |--(8)--- commitment_signed --->|       |
+        |       |<-(9)---- revoke_and_ack ------|       |
+        +-------+                               +-------+
 
 与直觉相反，这些更新适用于*其他节点的*
 承诺交易;节点只将这些更新添加到自己的更新中

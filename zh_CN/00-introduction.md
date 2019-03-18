@@ -12,16 +12,16 @@
 
 这是版本0。
 
-1. [BOLT＃1]（01-messaging.md）：基本协议
-2. [BOLT＃2]（02-peer-protocol.md）：通道管理的对等协议
-3. [BOLT＃3]（03-transactions.md）：比特币交易和脚本格式
-4. [BOLT＃4]（04-onion-routing.md）：洋葱路由协议
-5. [BOLT＃5]（05-onchain.md）：关于链式交易处理的建议
-7. [BOLT＃7]（07-routing-gossip.md）：P2P节点和频道发现
-8. [BOLT＃8]（08-transport.md）：加密和认证传输
-9. [BOLT＃9]（09-features.md）：已分配的功能标志
-10. [BOLT＃10]（10-dns-bootstrap.md）：DNS引导程序和辅助节点位置
-11. [BOLT＃11]（11-payment-encoding.md）：闪电付款的发票协议
+1. [BOLT #1](01-messaging.md)：基本协议
+2. [BOLT #2](02-peer-protocol.md)：通道管理的对等协议
+3. [BOLT #3](03-transactions.md)：比特币交易和脚本格式
+4. [BOLT #4](04-onion-routing.md)：洋葱路由协议
+5. [BOLT #5](05-onchain.md)：关于链式交易处理的建议
+7. [BOLT #7](07-routing-gossip.md)：P2P节点和频道发现
+8. [BOLT #8](08-transport.md)：加密和认证传输
+9. [BOLT #9](09-features.md)：已分配的功能标志
+10. [BOLT #10](10-dns-bootstrap.md)：DNS引导程序和辅助节点位置
+11. [BOLT #11](11-payment-encoding.md)：闪电付款的发票协议
 
 ## Spark：闪电简介
 
